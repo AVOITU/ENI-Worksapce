@@ -1,0 +1,10 @@
+h1{
+    font-size: xx-large;
+    text-align: center;
+}
+
+.description{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
