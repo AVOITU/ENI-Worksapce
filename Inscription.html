@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <script src="inscription.js" defer></script>
+</head>
+<body>  
+    <header>
+        <h1>
+            <pre>ENI-MEMORY-Accueil</pre>
+        </h1>
+
+        <nav>
+            <ul>
+                <li><a href="acceuilMemory.html">Accueil</a></li>
+                <li><a href="Inscription.html">S'inscrire</a></li>
+                <li><a href="Connection.html">Se connecter</a></li>
+                <li><a href="Profil.html">Profil</a></li>
+                <li><a href="Jouer.html">Jouer</a></li>
+            </ul>            
+        </nav>
+    </header>
+
+    <fieldset>
+        <h1 class="Inscription">Inscrivez-vous</h1>
+
+        <form>
+            <div id="divNomUtilisateur">
+                <label for="nomUtilisateur" class="userInformation">Nom d'utilisateur</label>
+                <input type="text" id="nomUtilisateur" name="nomUtilisateur" autofocus required placeholder="alibaba"
+                pattern="[A-Za-z]{3,}" title="Saisissez votre nom (3 caractères minimum.)">
+            </div>
+
+            <div id="divEmail">
+                <label for="email" class="userInformation">Entrez votre e-mail</label>
+                <input type="text" id="email" name="email" required placeholder="bestmemoryever@wanadoo.fr"
+                pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" title="Votre e-mail">
+            </div>
+
+            <div id="divPassword">
+                <label for="password" class="userInformation">Mot de passe</label>
+                <input type="password" id="password" name="password" required placeholder="Votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"title="Mot de passe: minimum 6 caractères
+                minuscules ,majuscules et chiffres">
+            </div>
+
+            <div id="divPasswordVerification">
+                <label for="passwordVerification" class="userInformation">Confirmer le mot de passe</label>
+                <input type="password" id="passwordVerification" name="passwordVerification" required placeholder="Confirmer le mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"title="Confirmer
+                le mot de passe">
+            </div>
+
+            <div id="buttons">
+                <input class= "button formulary" type="submit" Value="Création du compte">
+                <input class= "button formulary" type="reset" value="Annuler">
+            </div>
+
+        </form>
+    </fieldset>    
+</body>
+</html>
