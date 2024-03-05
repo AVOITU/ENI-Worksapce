@@ -45,8 +45,7 @@ section:last-child{
 }
 
 fieldset{
-  border:1px solid black;
-
+  border:3px solid black;
 }
 
 /* Inscription */
@@ -78,4 +77,19 @@ legend{
   font-size: xx-large;
   color: black;
   margin-bottom: 30px;
+}
+
+label.profil{
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 0px;
+  margin-bottom: 0vmax;
+}
+
+#imgProfil{
+  width: 5vmax;
+  border-radius: 50%;
+  border: 0.2rem solid black;
+  padding: 0.5rem ;
 }
