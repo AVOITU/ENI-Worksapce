@@ -1,3 +1,5 @@
+/* Global */
+
 body {
   background: linear-gradient(90deg, #7361ff, #bfff70);
 }
@@ -20,20 +22,16 @@ main{
   color: antiquewhite;
 }
 
+select{
+  margin-bottom: 1vmax;
+}
+
 img {
   width: 39%;
   margin-top: 1vmax;
   margin-bottom: 0.5vmax;
   margin-left: 1vmax;
   margin-right: 1vmax;
-}
-
-section:first-child{
-  margin-top: 1vmax;
-}
-
-section:last-child{
-  margin-bottom: 1vmax;
 }
 
 .navigation{
@@ -46,6 +44,16 @@ section:last-child{
 
 fieldset{
   border:3px solid black;
+}
+
+/* Accueil */
+
+section:first-child{
+  margin-top: 1vmax;
+}
+
+section:last-child{
+  margin-bottom: 1vmax;
 }
 
 /* Inscription */
