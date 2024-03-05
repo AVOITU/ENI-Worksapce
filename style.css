@@ -101,3 +101,20 @@ label.profil{
   border: 0.2rem solid black;
   padding: 0.5rem ;
 }
+
+td {
+  height: 15vh;
+  width: 15vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+td:hover {
+  border: 1px black solid;
+}
+
+tr{
+  
+}
