@@ -114,3 +114,22 @@ td {
 td:hover {
   border: 1px black solid;
 }
+
+.ajoutjs{
+  display: block;
+  margin-left: 19%;
+
+}
+
+.securityAdviceColor{
+  display: block;
+  width: 8vmax;
+  height: 10px;
+  margin-left: 20%;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+#mdpLabel{
+  margin-bottom: 5px;
+}

@@ -6,25 +6,27 @@
 // Mettre en place une écoute sur le mdp
 
 function mdpSecurity() {
-    let inputPassword= document.getElementById("mdp");
-    console.log(inputPassword);
-    const item=document.createElement("p");
-    inputPassword.appendChild(item)
+  let inputPassword = document.getElementById("mdp");
+  console.log(inputPassword);
+  const item = document.createElement("p");
+  const div = document.createElement("span");
+  item.className = "ajoutjs";
+  div.className = "securityAdviceColor";
+  inputPassword.insertAdjacentElement("afterend", div);
+  inputPassword.insertAdjacentElement("afterend", item);
 
-    inputPassword.addEventListener("input", function helpForPassword(){
-        let paswwordLength = inputPassword.value.length;
-            if (paswwordLength<6) {
-                item.innerText= "Mot de passe faible";
-            };
-    });
-};
-    // // Création des items <li>
-    // const item = document.createElement('li');
-    // // Création du texte
-    // const contenu = document.createTextNode('valeur de i : ' + i);
-    // // Association du texte à l'item <li>
-    // item.appendChild(contenu);
-    // // Ajout d'un identifiant sur chaque item <li>
-    // item.setAttribute('id', 'li' + i);
-    // // Insertion de l'item <li> à la liste <ul>
-    // liste.appendChild(item);
+  inputPassword.addEventListener("input", function helpForPassword() {
+    let paswwordLength = inputPassword.value.length;
+    if (paswwordLength < 7) {
+      item.innerText = "Mot de passe faible";
+      div.style.backgroundColor = "red";
+        }else if ((paswwordLength >= 7 && paswwordLength <= 9)) {
+        item.innerText = "Mot de passe moyen";
+        div.style.backgroundColor = "orange";
+      } else {
+        item.innerText = "Mot de passe fort";
+        div.style.backgroundColor = "green";
+      };
+  });
+}
+
