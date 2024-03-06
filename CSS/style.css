@@ -4,7 +4,7 @@ body {
   background: linear-gradient(90deg, #7361ff, #bfff70);
 }
 
-h1 {
+h1, h2 {
   font-size: xx-large;
   text-align: center;
   margin-top: 1vmax;
@@ -44,6 +44,8 @@ img {
 
 fieldset{
   border:3px solid black;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* Accueil */
@@ -132,4 +134,20 @@ td:hover {
 
 #mdpLabel{
   margin-bottom: 5px;
+}
+
+
+@media screen and (max-width: 576px) {
+  body {
+    background: red;
+  }
+
+  .navigation{
+    flex-direction: column;
+  }
+
+  .containerH1{
+    display: flex;
+    justify-content: center;
+  }
 }

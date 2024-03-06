@@ -6,26 +6,26 @@
 // Mettre en place une écoute sur le mdp
 
 function mdpSecurity() {
-  let inputPassword = document.getElementById("mdp");
-  console.log(inputPassword);
+  
+  const inputPassword = document.getElementById("mdp");
   const item = document.createElement("p");
-  const div = document.createElement("span");
+  const span = document.createElement("span");
   item.className = "ajoutjs";
-  div.className = "securityAdviceColor";
-  inputPassword.insertAdjacentElement("afterend", div);
+  span.className = "securityAdviceColor";
+  inputPassword.insertAdjacentElement("afterend", span);
   inputPassword.insertAdjacentElement("afterend", item);
 
-  inputPassword.addEventListener("input", function helpForPassword() {
+  inputPassword.addEventListener("input", function () {
     let paswwordLength = inputPassword.value.length;
     if (paswwordLength < 7) {
       item.innerText = "Mot de passe faible";
-      div.style.backgroundColor = "red";
+      span.style.backgroundColor = "red";
         }else if ((paswwordLength >= 7 && paswwordLength <= 9)) {
         item.innerText = "Mot de passe moyen";
-        div.style.backgroundColor = "orange";
+        span.style.backgroundColor = "orange";
       } else {
         item.innerText = "Mot de passe fort";
-        div.style.backgroundColor = "green";
+        span.style.backgroundColor = "green";
       };
   });
 }
