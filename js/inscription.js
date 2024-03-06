@@ -8,14 +8,13 @@
 function mdpSecurity() {
     let inputPassword= document.getElementById("mdp");
     console.log(inputPassword);
+    const item=document.createElement("p");
+    inputPassword.appendChild(item)
 
     inputPassword.addEventListener("input", function helpForPassword(){
         let paswwordLength = inputPassword.value.length;
-        const item=document.createElement("p");
-        const contenu=document.createTextNode("Sécurité faible");
             if (paswwordLength<6) {
-            item.appendChild(contenu);
-            inputPassword.appendChild(item);
+                item.innerText= "Mot de passe faible";
             };
     });
 };
