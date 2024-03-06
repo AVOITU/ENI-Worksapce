@@ -1,6 +1,6 @@
 function mdpSecurity() {
     let inputPassword= document.getElementById("mdp");
-console.log(inputPassword);
+    console.log(inputPassword);
 
     inputPassword.addEventListener("input", function helpForPassword(){
         let paswwordLength = inputPassword.length;
