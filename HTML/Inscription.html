@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="formulaire">  
+<body class="formulaire" onload="mdpSecurity()">  
     
     <header>
         <h1>
@@ -47,8 +47,8 @@
             </div>
 
             <div id="divPassword">
-                <label for="password" class="userInformation">Mot de passe</label>
-                <input type="password" id="password" name="password" required placeholder="Votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"title="Mot de passe: minimum 6 caractères
+                <label for="mdp" class="userInformation">Mot de passe</label>
+                <input type="password" id="mdp" name="mdp" required placeholder="Votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"title="Mot de passe: minimum 6 caractères
                 minuscules ,majuscules et chiffres">
             </div>
 
