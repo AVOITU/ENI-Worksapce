@@ -150,4 +150,8 @@ td:hover {
     display: flex;
     justify-content: center;
   }
+
+  .fieldsetConnection{
+    margin-right: 3rem;
+  }
 }
