@@ -30,7 +30,7 @@ function localUsers() {
 
     e.preventDefault();
 
-    fetch('usersData.json')
+    fetch('..\\json\\usersData.json')
     .then(reponse => reponse.json())
     .then(data => storeData(data))
     .then(() => afficher(getData()))
@@ -41,7 +41,6 @@ function localUsers() {
       localStorage.setItem(element, getInput);
       let newElement = localStorage.getItem(element);
 
-      
     });
   }
 }
