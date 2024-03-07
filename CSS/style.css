@@ -138,9 +138,6 @@ td:hover {
 
 
 @media screen and (max-width: 576px) {
-  body {
-    background: red;
-  }
 
   .navigation{
     flex-direction: column;
