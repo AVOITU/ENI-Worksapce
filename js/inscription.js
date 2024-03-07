@@ -1,5 +1,4 @@
 function mdpSecurity() {
-  
   const inputPassword = document.getElementById("mdp");
   const item = document.createElement("p");
   const span = document.createElement("span");
@@ -13,28 +12,35 @@ function mdpSecurity() {
     if (paswwordLength < 7) {
       item.innerText = "Mot de passe faible";
       span.style.backgroundColor = "red";
-        }else if ((paswwordLength >= 7 && paswwordLength <= 9)) {
-        item.innerText = "Mot de passe moyen";
-        span.style.backgroundColor = "orange";
-      } else {
-        item.innerText = "Mot de passe fort";
-        span.style.backgroundColor = "green";
-      };
+    } else if (paswwordLength >= 7 && paswwordLength <= 9) {
+      item.innerText = "Mot de passe moyen";
+      span.style.backgroundColor = "orange";
+    } else {
+      item.innerText = "Mot de passe fort";
+      span.style.backgroundColor = "green";
+    }
   });
 }
 
 function localUsers() {
-  
-  const btnComptCreation = document.getElementById("btnComptCreation");
-  console.log(btnComptCreation);
-  btnComptCreation.addEventListener("click", function(){
-    btnComptCreation. preventDefault()
-  })
+  const getForm = document.querySelector("form");
+  getForm.addEventListener("submit", handleForm);
 
-  localStorage.setItem('prenom', 'Sylvain')
-  let prenom = localStorage.getItem('prenom')
-  console.log(prenom) 
-  sessionStorage.setItem('age', 25)
-  let age = sessionStorage.getItem('age')
-  console.log(age)
+  function handleForm(e) {
+
+    e.preventDefault();
+
+    const infoUser = ["nomUtilisateur", "email", "mdp", "passwordVerification"];
+    infoUser.forEach((element) => {
+      let getInput = document.getElementById(element).value;
+      localStorage.setItem(element, getInput);
+      let newElement = localStorage.getItem(element);
+      
+    });
   }
+}
+
+function init() {
+  mdpSecurity();
+  localUsers();
+}
