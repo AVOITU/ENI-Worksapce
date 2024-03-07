@@ -30,11 +30,17 @@ function localUsers() {
 
     e.preventDefault();
 
+    fetch('usersData.json')
+    .then(reponse => reponse.json())
+    .then(data => storeData(data))
+    .then(() => afficher(getData()))
+
     const infoUser = ["nomUtilisateur", "email", "mdp", "passwordVerification"];
     infoUser.forEach((element) => {
       let getInput = document.getElementById(element).value;
       localStorage.setItem(element, getInput);
       let newElement = localStorage.getItem(element);
+
       
     });
   }
