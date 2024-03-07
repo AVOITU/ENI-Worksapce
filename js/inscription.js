@@ -23,3 +23,18 @@ function mdpSecurity() {
   });
 }
 
+function localUsers() {
+  
+  const btnComptCreation = document.getElementById("btnComptCreation");
+  console.log(btnComptCreation);
+  btnComptCreation.addEventListener("click", function(){
+    btnComptCreation. preventDefault()
+  })
+
+  localStorage.setItem('prenom', 'Sylvain')
+  let prenom = localStorage.getItem('prenom')
+  console.log(prenom) 
+  sessionStorage.setItem('age', 25)
+  let age = sessionStorage.getItem('age')
+  console.log(age)
+  }

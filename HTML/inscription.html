@@ -10,7 +10,7 @@
 </head>
 
 
-<body class="formulaire" onload="mdpSecurity()">
+<body class="formulaire" onload="mdpSecurity()" onload="localUsers()">
     <div class="container"> 
         
         <header>
@@ -63,7 +63,7 @@
                 </div>
 
                 <div id="buttons">
-                    <input class= "button formulary" type="submit" Value="Création du compte">
+                    <input class= "button formulary" id="btnComptCreation" type="submit" Value="Création du compte">
                     <input class= "button formulary" type="reset" value="Annuler">
                 </div>
 
