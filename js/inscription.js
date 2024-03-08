@@ -31,13 +31,26 @@ function localUsers() {
     e.preventDefault();
 
     const infoUser = ["nomUtilisateur", "email", "mdp", "passwordVerification"];
+    let index=0
 
     infoUser.forEach((element) => {
+      console.log(index);
+      index=index+1
+      let objectUser={}
+      const storageUsers = []; 
       let getInput = document.getElementById(element).value;
-      localStorage.setItem(element, getInput);
-      JSON.stringify(element)
+
+      objectUserdata(index , objectUser, getInput, storageUsers)
     });
   };
+
+  function objectUserdata(index, objectUser, getInput, storageUsers) {   
+  
+    localStorage.setItem(index, getInput);
+    objectUser[index]= getInput;
+    storageUsers.push(objectUser)
+    console.log(storageUsers);
+  }
 };
 
 function testExistingUser() {
