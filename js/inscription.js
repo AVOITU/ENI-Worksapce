@@ -26,32 +26,36 @@ function localUsers() {
   const getForm = document.querySelector("form");
   getForm.addEventListener("submit", handleForm);
 
-  function handleForm(e) {
+function handleForm(e) {
 
-    e.preventDefault();
+  e.preventDefault();
 
-    const infoUser = ["nomUtilisateur", "email", "mdp", "passwordVerification"];
-    let index=0
+  const infoUser = ["nomUtilisateur", "email", "mdp", "passwordVerification"];
+  let index=0
+  let objectUser={}
+  const storageUsers = [];
 
-    infoUser.forEach((element) => {
-      console.log(index);
-      index=index+1
-      let objectUser={}
-      const storageUsers = []; 
-      let getInput = document.getElementById(element).value;
+  infoUser.forEach((element) => {
+    console.log(index);
+    index=index+1 
+    let getInput = document.getElementById(element).value;
 
-      objectUserdata(index , objectUser, getInput, storageUsers)
+    objectUserdata(index , objectUser, getInput, storageUsers)
     });
   };
 
-  function objectUserdata(index, objectUser, getInput, storageUsers) {   
+function objectUserdata(index, objectUser, getInput, storageUsers) {   
   
-    localStorage.setItem(index, getInput);
-    objectUser[index]= getInput;
-    storageUsers.push(objectUser)
-    console.log(storageUsers);
+  localStorage.setItem(index, getInput);
+  objectUser[index]= getInput;
+  storageUsers.push(objectUser)
+  return storageUsers
   }
 };
+
+function stockTable() {
+  
+}
 
 function testExistingUser() {
   
