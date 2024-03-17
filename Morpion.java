@@ -5,20 +5,20 @@ import java.util.Scanner;
 
 public class Morpion {
 	public static void main(String[] args) {
-		//String[][] tableauJeu = new String[3][3];
-		String[][] tableauJeu = {
-			    {"X", "X", "X"},
-			    {"X", "X", "X"},
-			    {"X", "X", "1"}
-			};
+		// String[][] tableauJeu = new String[3][3];
+		String[][] tableauJeu = { { "X", "O", "X" }, { "O", "1", "O" }, { "X", "O", "X" } };
 		char player = '1';
 		System.out.println(Arrays.deepToString(tableauJeu));
 		for (int i = 0; i < 8; i++) {
 			String inputCross = posCrossInput();
-			int[] positions = vericationsPosition(inputCross);
+			int[] positions = vericationsCrossPosition(inputCross);
 			putACross(positions, tableauJeu);
+			boolean win = checkVictory(player, tableauJeu);
+			printWinner(player, win);
 			player = togglePlayer(player);
 			putANought(positions, tableauJeu);
+			win = checkVictory(player, tableauJeu);
+			printWinner(player, win);
 			player = togglePlayer(player);
 		}
 	}
@@ -30,7 +30,7 @@ public class Morpion {
 		return inputCross;
 	}
 
-	public static int[] vericationsPosition(String inputCross) {
+	public static int[] vericationsCrossPosition(String inputCross) {
 		String separation[] = inputCross.split(",");
 		if (separation.length != 2) {
 			System.out.println("Erreur vous n'avez pas rentré le bon nombre de chiffres");
@@ -74,16 +74,58 @@ public class Morpion {
 	public static void putANought(int[] positions, String[][] tableauJeu) {
 		int randomLine = (int) (Math.random() * 2);
 		int randomColumn = (int) (Math.random() * 2);
-		
-		while (tableauJeu[randomLine][randomColumn]!="X"||tableauJeu[randomLine][randomColumn]!="O") {
-			randomLine = (int) (Math.random() * 2);
-			randomColumn = (int) (Math.random() * 2);
+
+		while (tableauJeu[randomLine][randomColumn] == "X" || tableauJeu[randomLine][randomColumn] == "O") {
+			randomLine = (int) (Math.random() * 3);
+			randomColumn = (int) (Math.random() * 3);
+
 		}
 		tableauJeu[randomLine][randomColumn] = "O";
 		System.out.println(Arrays.deepToString(tableauJeu));
 	}
+
+	public static boolean checkVictoryLines(char player, String[][] tableauJeu) {
+		for (int verifiedLine = 0; verifiedLine < 3; verifiedLine++) {
+			if (tableauJeu[verifiedLine][0] == tableauJeu[verifiedLine][1]
+					&& tableauJeu[verifiedLine][1] == tableauJeu[verifiedLine][2]) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static boolean checkVictoryColumns(char player, String[][] tableauJeu) {
+		for (int verifiedColumn = 0; verifiedColumn < 3; verifiedColumn++) {
+			if (tableauJeu[verifiedColumn][0] == tableauJeu[verifiedColumn][1]
+					&& tableauJeu[verifiedColumn][1] == tableauJeu[verifiedColumn][2]) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static boolean checkVictoryDiagonals(char player, String[][] tableauJeu) {
+		if ((tableauJeu[0][0] == tableauJeu[1][1] && tableauJeu[1][1] == tableauJeu[2][2])
+				|| (tableauJeu[0][2] == tableauJeu[1][1] && tableauJeu[1][1] == tableauJeu[2][0])) {
+			return true;
+		}
+		return false;
+	}
 	
-	public static void checkVictory() {
-		
+	public static boolean checkVictory(char player, String[][] tableauJeu) {
+		boolean winline=checkVictoryLines(player, tableauJeu);
+		boolean winColumn=checkVictoryColumns(player, tableauJeu);
+		boolean winDiagonal=checkVictoryDiagonals(player, tableauJeu);
+		if (winline==true ||winColumn==true ||winDiagonal==true) {
+			return true;
+		}
+		return false;
+	}
+
+	public static void printWinner(char player, boolean win) {
+		if (win == true) {
+			System.out.println("Le joueur " + player + " a gagné!");
+			System.exit(0);
+		}
 	}
 }
